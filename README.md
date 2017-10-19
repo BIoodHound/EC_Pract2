@@ -5,7 +5,7 @@
 | 0x00000000  | 0x007FFFFF  | SDRAM (8 MB)                               |}
 | 0x08000000  | 0x0807FFFF  | SRAM (512 KB)                              |)  Memory
 | 0x09000000  | 0x09001FFF  | On-chip Memory (Variable, max = 4 KB)      |}
-|------------------------------------------------------------------------|
+|                           						 |
 | 0x10000000  | 0x1000000F  | Red LED parallel port                      |}
 | 0x10000010  | 0x1000001F  | Green LED parallel port (16)               |)
 | 0x10000020  | 0x1000002F  | 7-segment HEX3-HEX0 displays parallel port |)
@@ -18,7 +18,7 @@
 | 0x10001010  | 0x10001017  | Serial port (7)                            |)
 | 0x10002000  | 0x1000201F  | Interval timer                             |)
 | 0x10002020  | 0x10002027  | System ID                                  |}
-|------------------------------------------------------------------------|
+
 
 
 ##Ejemplo 1
