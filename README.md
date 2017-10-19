@@ -42,7 +42,7 @@ movia r3, 0x10000040 #Initializes the register r3 with the Base Address of the p
 ldwio r4, 0(r3) #Initializes the register r4 with a bit pattern given by the parallel port
 ```
 
-##Ejemplo 1
+##Example 1
 ```assembly
 
 ********************************************************************
