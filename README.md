@@ -19,7 +19,7 @@
 | 0x10002000  | 0x1000201F  | Interval timer                             |)
 | 0x10002020  | 0x10002027  | System ID                                  |}
 
-![alt text](https://github.com/BIoodHound/EC_Pract2/blob/master/DE2cap.PNG)
+![alt text](https://github.com/BIoodHound/EC_Pract2/blob/master/Pics/DE2cap.PNG)
 
 In this example we are going to use the HEX7-HEX4 displays on the left which has an assigned base address of 0x10000030 to represent the number 0 using the following instructions.
 
@@ -28,10 +28,10 @@ movia r2, 0x10000030 #Initializes the register r2 with the base address of the p
 addi r3, r0, 0x3F #Initializes the register r3 with a bit pattern that matches with the hex value 0x3F = 111111 = 0 on display
 stwio r3, 0(r2) #Initializes the mapped register on the address that signals r2 with the pattern of bits registered on the register r3
 ```
-![alt text](https://github.com/BIoodHound/EC_Pract2/blob/master/Salida.PNG)
+![alt text](https://github.com/BIoodHound/EC_Pract2/blob/master/Pics/Salida.PNG)
 
 
-![alt text](https://github.com/BIoodHound/EC_Pract2/blob/master/DE2cap2.PNG)
+![alt text](https://github.com/BIoodHound/EC_Pract2/blob/master/Pics/DE2cap2.PNG)
 
 Here we will observe another port from the DE2 Basic Computer, that is this case is assigned to the Base Address 0x10000040. It's main function is to register the state of various switches that range from SW17 to SW0 totaling 18 switches with each its own assigned bit. To read the state of any of these switches we read the data register using the instruction "ldwio".
 
