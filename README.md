@@ -212,3 +212,34 @@ KEY_PRESSED:
 
 
 ```
+Exercise 1(yet to translate)
+Diseñar un programa ensamblador que encienda alternativamente todos los
+leds rojos en posiciones pares y todos los leds rojos en posiciones impares de la
+placa DE2. Nota: observar la asignación de la dirección del espacio de
+direccionamiento del procesador NIOS II de la interfaz paralela de los leds rojos
+(LEDR) que se muestra a continuación.
+
+```assembly
+.global_start
+
+start:
+	movia r2, 0x10000000
+	movia r3, impar
+	movia r4, par
+	addi r5, r0, 500000
+
+impar: 
+	stwio r2, 0(r3)
+	subi r5, r5, 1
+	bne r5, r0, impar
+	addi r5, r0, 500000
+par: 
+	stwio r2, 0(r4)
+	subi r5, r5, 1
+	bne r5, r0, par
+	addi r5, r0, 500000
+	br impar
+```
+Exercise 2
+
+
