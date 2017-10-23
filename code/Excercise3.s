@@ -2,7 +2,7 @@
 
 start:
     movia r2, 0x10000020 #Hex3-Hex0 
-    movia r3, 0c10000030 #Hex7-Hex4
+    movia r3, 0x10000030 #Hex7-Hex4
     addi r4, r0, 500000
     movia r16, cero
     ldwio r5, 0(r16)
