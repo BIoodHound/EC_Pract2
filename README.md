@@ -239,6 +239,12 @@ par:
 	bne r5, r0, par
 	addi r5, r0, 500000
 	br impar
+	
+.data 
+par:
+.word 0x00015555
+impar:
+.word 0x0000aaaa 
 ```
 Exercise 2
 
