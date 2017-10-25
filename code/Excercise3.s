@@ -1,26 +1,25 @@
+.text
 .global _start
 
-start:
+_start:
     movia r2, 0x10000020 #Hex3-Hex0 
-    movia r3, 0x10000030 #Hex7-Hex4
-    addi r4, r0, 500000
-    movia r16, cero
-    ldwio r5, 0(r16)
+    movia r4, 500000
+    movia r3, 0x3F
     addi  r6, r0, 4
-    
-loop:
-    addi r4, r4, -1
-    bne r4, r0, loop
-    stwio r5, 0(r2)
-    rol r5, r5, 7
-    addi r6, r0, -1
-    addi r4, r0, 500000
-    bne r6, r0 loop
-    ldwio r5, 0(r16)
-    br loop
-    
-.data
-cero: 
-.word 0x0000001f
 
+
+loop:
+    stwio r3, 0(r2)
+    call counter
+    roli r3, r3, 8
+    addi r6, r6, -1
+    bne r6, r0, loop
+    addi  r6, r0, 4
+    br loop
+counter: 
+	addi r4, r4, -1
+    bne r4, r0, counter
+    movia r4, 500000
+    ret
+    
 .end
