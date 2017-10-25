@@ -16,14 +16,11 @@ wait:
     bne r5, r0, wait
 key1:
     stwio r16, 0(r2)
-    movia r5, r0
     br wait
 key2:
     stwio r17, 0(r2)
-    movia r5, r0
     br wait
 key3:
     stwio r18, 0(r2)
-    movia r5, r0
     br wait
 .end
