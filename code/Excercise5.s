@@ -9,18 +9,21 @@ start:
     movia r17, 0x5B #2
     movia r18, 0x4F #3
 wait:
-    ldwio r5, 0(r3)
+    ldwio r5, 0(r3) #initializes r5 with the push button value
     beq r5, 0x2, key1
     beq r5, 0x4, key2
     beq r5, 0x8, key3
     bne r5, r0, wait
 key1:
+    stwio r16, 0(r2)
     movia r5, r0
-    stwio r16, 0(r5)
+    br wait
 key2:
+    stwio r17, 0(r2)
     movia r5, r0
-    stwio r17, 0(r5)
+    br wait
 key3:
+    stwio r18, 0(r2)
     movia r5, r0
-    stwio r18, 0(r5)
+    br wait
 .end
