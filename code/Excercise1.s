@@ -1,28 +1,28 @@
 #Assembly program that turns on repeatedly the red LEDs in a DE2 basic computer in a odd and even order.
 
-.global_start
+.global _start
 
-start:
+_start:
 	movia r2, 0x10000000 #Initializes the register r2 with the base address of the parallel port
-	movia r3, odd 
-	movia r4, even
-	addi r5, r0, 500000
+	movia r3, 0x0002aaaa 
+	movia r4, 0x00015555
+	movia r5, 500000
+	stwio r0, 0(r2)
+
 
 odd: 
-	stwio r2, 0(r3)
-	subi r5, r5, 1
-	bne r5, r0, odd
-	addi r5, r0, 500000
+	stwio r3, 0(r2)
+	call counter	
+	br even
 even: 
-	stwio r2, 0(r4)
+	stwio r4, 0(r2)
+	call counter	
+	br odd
+
+counter: 
 	subi r5, r5, 1
-	bne r5, r0, even
-	addi r5, r0, 500000
-	br impar
-	
-.data 
-even:
-.word 0x00015555
-odd:
-.word 0x0000aaaa 
+	bne r5, r0, counter
+	stwio r0, 0(r2)
+	movia r5, 500000
+	ret
 .end
