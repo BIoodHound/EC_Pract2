@@ -2,7 +2,7 @@
 #correspondientes a los interruptores que no estén activados.
 .text
 .global _start
-start:
+_start:
     movia r2, 0x10000040 #Switch
     movia r3, 0x10000000 #LED Rojo
 
