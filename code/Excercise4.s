@@ -1,3 +1,6 @@
+#Diseñar un programa ensamblador que encienda en la placa DE2 los leds rojos
+#correspondientes a los interruptores que no estén activados.
+.text
 .global _start
 start:
     movia r2, 0x10000040 #Switch
@@ -5,8 +8,8 @@ start:
 
 loop:
     ldwio r4, 0(r2) #Load input from the slider switch
-    roli r4, r4, 1
-    stwio r4, 0(r3) #write to red LEDs
+    movia r6, r4 #copy input
+    stwio r6, 0(r3) #write to red LEDs
     br loop
         
 .end    
