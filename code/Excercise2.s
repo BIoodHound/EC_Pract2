@@ -8,7 +8,7 @@ _start:
     movia r2, 0x10000010 # Green LED
     movia r3, 0x1 # Initialize a bit to the r3 register
     movia r4, 0x500000
-    addi r5, r0, 7
+    addi r5, r0, 8
     stwio r0, 0(r2) # just in case reset the green leds 
     
 alter:
@@ -18,12 +18,12 @@ alter:
     call loop
     stwio r0, 0(r2)
     bne r5, r0, alter
-    addi r5, r0, 7
-    movia r3, 0x1 #reposition bit to prevent overflow
+    addi r5, r0, 8
     br alter
     
 loop:
     addi r4, r4, -1
     bne r4, r0, loop
+    movia r4, 0x500000
     ret
 .end
