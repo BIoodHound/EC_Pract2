@@ -8,7 +8,7 @@ _start:
 
 loop:
     ldwio r6, 0(r2) #Load input from the slider switch
-    
+    nor r6, r6, r0
     stwio r6, 0(r3) #write to red LEDs
     br loop
         
