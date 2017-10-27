@@ -3,6 +3,7 @@
 # Yet to test on board possible overflow error
 
 .text
+.global _start
 _start:
     movia r2, 0x10000010 # Green LED
     movia r3, 0x1 # Initialize a bit to the r3 register
