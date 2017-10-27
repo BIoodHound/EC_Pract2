@@ -17,7 +17,7 @@ wait:
     beq r5, r19, key1
     beq r5, r20, key2
     beq r5, r21, key3
-    call wait
+    br wait
 key1:
     stwio r16, 0(r2)
     br wait
