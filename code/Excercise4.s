@@ -7,8 +7,8 @@ _start:
     movia r3, 0x10000000 #LED Rojo
 
 loop:
-    ldwio r4, 0(r2) #Load input from the slider switch
-    movia r6, r4 #copy input
+    ldwio r6, 0(r2) #Load input from the slider switch
+    
     stwio r6, 0(r3) #write to red LEDs
     br loop
         
